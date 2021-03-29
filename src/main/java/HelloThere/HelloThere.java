@@ -1,8 +1,22 @@
 package HelloThere;
 
 public class HelloThere {
+
+    static int number;
+
     public static void main(String[] args) {
-        System.out.println("Hello There!");
-        System.out.println("General Kenobi..");
+
+        HelloThere hello = new HelloThere();
+        hello.printMethod(2);
+
+
+    }
+
+    public void printMethod(int x) {
+
+        int newX = x * 2;
+
+        System.out.println("Hello there!\nOh, and " + x + " times 2 is " + newX);
+
     }
 }
