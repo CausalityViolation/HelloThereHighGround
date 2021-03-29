@@ -13,15 +13,15 @@ pipeline {
                 sh 'java --version'
                 sh 'mvn clean compile'
             }
-            post {
-                success {
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
         }
         stage('Package') {
             steps {
                 sh 'mvn package'
+            }
+            post {
+                success {
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
     }
