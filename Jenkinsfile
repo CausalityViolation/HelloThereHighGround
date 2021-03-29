@@ -11,7 +11,7 @@ pipeline {
                 echo 'Hello There!'
                 echo 'General Kenobi..'
                 sh 'java --version'
-                sh 'mvn --clean compile'
+                sh 'mvn clean compile'
             }
         }
     }
