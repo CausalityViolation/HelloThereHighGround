@@ -13,6 +13,12 @@ pipeline {
                 sh 'java --version'
                 sh 'mvn clean compile'
             }
+            post {
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
         }
         stage('Test') {
             steps {
@@ -22,12 +28,6 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package'
-            }
-        }
-        post {
-            success {
-                junit '**/target/surefire-reports/TEST-*.xml'
-                archiveArtifacts 'target/*.jar'
             }
         }
     }
