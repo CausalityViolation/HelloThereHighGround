@@ -2,8 +2,6 @@ package HelloThere;
 
 public class HelloThere {
 
-    static int number;
-
     public static void main(String[] args) {
 
         HelloThere hello = new HelloThere();
