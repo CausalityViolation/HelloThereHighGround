@@ -2,7 +2,7 @@ package HelloThere;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class HelloThereTest {
 
@@ -11,10 +11,14 @@ class HelloThereTest {
     @Test
     void printTest() {
 
-        helloTest.printMethod(2);
-        var actual = 4;
+        assertFalse(helloTest.printMethod(2));
 
-        assertEquals(4, actual);
+    }
+
+    @Test
+    void highGroundTest() {
+
+        assertTrue(helloTest.printMethod(11));
 
     }
 }

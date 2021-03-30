@@ -1,20 +1,32 @@
 package HelloThere;
 
+import java.util.Random;
+
 public class HelloThere {
 
     public static void main(String[] args) {
 
+        Random rand = new Random();
         HelloThere hello = new HelloThere();
-        hello.printMethod(2);
+
+        var randomNumber = rand.nextInt(10 - 1) - 1;
+
+        hello.printMethod(randomNumber);
 
 
     }
 
-    public void printMethod(int x) {
+    public boolean printMethod(int x) {
 
         int newX = x * 2;
+        int highGround = 9;
 
-        System.out.println("Hello there!\nOh, and " + x + " times 2 is " + newX);
-
+        if (newX >= 10) {
+            System.out.println("Oh, " + newX + " is higher than " + highGround + "?!\nLooks like you have THE HIGH GROUND!\n");
+            return true;
+        } else {
+            System.out.println("Oh, quick math time! " + x + " times 2 is " + newX + "!");
+            return false;
+        }
     }
 }

@@ -8,8 +8,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello There!'
-                echo 'General Kenobi..'
                 sh 'java --version'
                 sh 'mvn clean compile'
             }
