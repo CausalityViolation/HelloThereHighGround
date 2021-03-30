@@ -24,6 +24,8 @@ public class HelloThere {
         if (newX >= 10) {
             System.out.println("Oh, " + newX + " is higher than " + highGround + "?!\nLooks like you have THE HIGH GROUND!\n");
             return true;
+        } else if (newX < 0) {
+            throw new IllegalArgumentException("Ops! Looks like the randomizer randomized you into the LAVA!");
         } else {
             System.out.println("Oh, quick math time! " + x + " times 2 is " + newX + "!");
             return false;
